@@ -147,7 +147,7 @@ app.post("/movie/book-movie", async (req, res) => {
 
     const updatedResult = await dbcollection.updateOne(
       {
-        _id: new ObjectId(bookingRequest.movieId),
+        _id: bookingRequest.movieId,
       },
       {
         $set: {
