@@ -104,7 +104,7 @@ app.post("/movie/book-movie", async (req, res) => {
      */
     console.log(bookingRequest.movieId);
     let movie = await dbcollection.findOne({
-      _id: new ObjectId(bookingRequest.movieId),
+      _id: bookingRequest.movieId,
     });
 
     if (!movie) {
